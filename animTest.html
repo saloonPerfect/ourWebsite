@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animTest.css">
+</head>
+<body>
+    <div class="scroll">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const blocks = document.querySelectorAll(".block");
+
+    const revealBlocks = () => {
+        blocks.forEach((block) => {
+            const blockTop = block.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (blockTop < windowHeight) {
+                block.classList.add("show");
+            }
+        });
+    };
+
+    // Initial check
+    revealBlocks();
+
+    // Add scroll event listener
+    window.addEventListener("scroll", revealBlocks);
+});
+
+   </script>
+    
+    
+</body>
+</html>
