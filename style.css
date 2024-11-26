@@ -1,5 +1,5 @@
 .navbar {
-    background: linear-gradient(to right, white 15%, #e6b3e6);
+    background: linear-gradient(to left, #231f20e6 15%, #d4af37,#eff1f3);
     position: fixed;
     z-index: 2;
     width: 100%;
@@ -43,7 +43,7 @@
 }
 
 body {
-    background: #f9ecf9;
+    background: #d4af37;
 }
 
 /*.carousel-item img {*/
@@ -232,7 +232,7 @@ iframe {
 
 footer {
     margin-top: 20px;
-    background: linear-gradient(to left, #df9fdf, white 32%, #e6b3e6);
+    background: linear-gradient(to left,  #231f20e6 15%, #d4af37,#eff1f3);
 }
 
 
