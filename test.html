@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Snip?</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0e1a34;
+    color: white;
+}
+
+.why-snip {
+    padding: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 2fr; /* Columns are the same, you can increase their width if needed */
+    gap: 0px; /* Optional: Increase the gap between boxes */
+}
+
+.box {
+    padding: 20px;  /* Increase padding for larger boxes */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Default box border */
+    min-height: 150px;  /* Set a minimum height for the boxes */
+}
+/* Remove border for the first column */
+.grid-container > .heading {
+    border: none;
+}
+
+.heading {
+    text-align: left;
+}
+
+.heading h1 {
+    font-size: 37px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    text-align: center;
+}
+
+.numbers .number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4d4d4;
+}
+
+.content h2 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.content p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+    color: #c4c4c4;
+}
+
+/* Style for the fourth column */
+.extra {
+    color: #c4c4c4;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column; /* Keep text flow in a column */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Align text inside to the left */
+    padding: 10px; /* Optional padding for spacing */
+}
+
+/* Remove horizontal border between the 3rd and 4th columns */
+.grid-container > .content {
+    border-right: none; /* Remove right border for 3rd column */
+}
+
+.grid-container > .extra {
+    border-left: none; /* Remove left border for 4th column */
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Keep text flow in a column */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Align text inside to the left */
+    padding: 10px; /* Optional padding for spacing */
+}
+
+.grid-container h2{
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr; /* Two columns: one for numbers and one for text */
+        gap: 10px;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the entire grid */
+    }
+
+    .heading {
+        grid-column: 1 / -1; /* Make heading span across the entire row */
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Border below heading */
+    }
+
+    .numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 30px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2); /* Border on the right of numbers */
+        padding-right: 10px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-left: 1px solid rgba(255, 255, 255, 0.2); /* Border on the left of content */
+    }
+
+    .content h2 {
+        font-size: 20px;
+        margin: 10px 0;
+        font-weight: normal;
+    }
+
+    .content p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: #c4c4c4;
+        line-height: 1.5;
+    }
+
+    .box {
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Border for each box */
+        padding: 15px;
+        min-height: auto;
+        width: 100%;
+    }
+
+    /* Ensuring content in each row is stacked */
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 3fr; /* Two columns */
+        gap: 10px;
+    }
+
+    .row .numbers {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .row .content h2 {
+        font-size: 20px;
+    }
+
+    .row .content p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="why-snip">
+        <div class="grid-container">
+            <!-- First Row -->
+            <div class="box heading">
+                <h1>Why Us?</h1>
+            </div>
+            <div class="box numbers">
+                <div class="number">01</div>
+            </div>
+            <div class="box content">
+                <h2>Excellence in every cut</h2>
+               
+            </div>
+            <div class="box extra">
+                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+            </div>
+    
+            <!-- Second Row -->
+            <div class="box heading"></div>
+            <div class="box numbers">
+                <div class="number">02</div>
+            </div>
+            <div class="box content">
+                <h2>A legacy of style and tradition</h2>
+               
+            </div>
+            <div class="box extra">
+                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+            </div>
+    
+            <!-- Third Row -->
+            <div class="box heading"></div>
+            <div class="box numbers">
+                <div class="number">03</div>
+            </div>
+            <div class="box content">
+                <h2>Mastering the art of barbering</h2>
+                
+            </div>
+            <div class="box extra">
+                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+            </div>
+
+             <!-- Fourth Row -->
+            <div class="box heading"></div>
+            <div class="box numbers">
+                <div class="number">04</div>
+            </div>
+            <div class="box content">
+                <h2>Styling with pride</h2>
+                
+            </div>
+            <div class="box extra">
+                <p>
+                    Styling with pride
+                    This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
