@@ -18,107 +18,129 @@
 
 
     <style>
-        .container1 {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0e1a34;
-    color: white;
-}
-
-.why-snip {
-    padding: 50px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr; /* Columns are the same, you can increase their width if needed */
-    gap: 0px; /* Optional: Increase the gap between boxes */
-}
-
-.box {
-    padding: 20px;  /* Increase padding for larger boxes */
-    border: 3px solid rgba(255, 255, 255, 0.2); /* Default box border */
-    min-height: 150px;  /* Set a minimum height for the boxes */
-}
-/* Remove border for the first column */
-.grid-container > .heading {
-    border: none;
-}
-
-.heading {
-    text-align: left;
-}
-
-.heading h1 {
-    font-size: 37px;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.numbers {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    text-align: center;
-}
-
-.numbers .number {
-    font-size: 28px;
+        .grid-container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas: 
+                "heading1 number1 content1 para1"
+                "heading1 number2 content2 para2"
+                "heading1 number3 content3 para3"
+                "heading1 number4 content4 para4";
+            background-color:#0a2148 ;
+            color: white;  
+            grid-column: 1 / -1;
+            
+        
+        }
+        .box{
+            border: 2px solid white;
+            height: 200px;
+            display: flex; /* Enable Flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            text-align: center; /* Center-align text */
+        
+            
+        }
+        #heading1 { 
+            grid-area: heading1;
+            background-color:#0a2148;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+        /* style why us heading */
+        #heading1 h1 {
+    font-size: 50px;
     font-weight: bold;
-    color: #d4d4d4;
-}
-
-.content h2 {
-    font-size: 22px;
-    margin: 10px 0;
-    font-weight: normal;
-}
-
-.content p {
-    font-size: 16px;
-    margin: 0;
-    line-height: 1.6;
-    color: #c4c4c4;
-}
-
-/* Style for the fourth column */
-.extra {
-    color: #c4c4c4;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column; /* Keep text flow in a column */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align content to the left */
-    text-align: left; /* Align text inside to the left */
-    padding: 10px; /* Optional padding for spacing */
-}
-
-/* Remove horizontal border between the 3rd and 4th columns */
-.grid-container > .content {
-    border-right: none; /* Remove right border for 3rd column */
-}
-
-.grid-container > .extra {
-    border-left: none; /* Remove left border for 4th column */
-}
-
-.content {
-    display: flex;
-    flex-direction: column; /* Keep text flow in a column */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align content to the left */
-    text-align: left; /* Align text inside to the left */
-    padding: 10px; /* Optional padding for spacing */
-}
-
-.grid-container h2{
-    font-size: 30px;
-}
-
-    
-        </style>
-
-
+    }
+        #number1 { 
+            grid-area: number1;
+        
+        }
+        #number2 { grid-area: number2; }
+        #number3 { grid-area: number3; 
+            background-color:#0a2148 ;
+        }
+        #number4 { 
+            grid-area: number4; 
+            background-color:#0a2148 ;
+        }
+        #content1 { 
+            grid-area: content1;
+            border-right: none;
+        }
+        #content2 { 
+            grid-area: content2; 
+            border-right: none;
+        }
+        #content3 { 
+            grid-area: content3; 
+            border-right: none;
+            background-color:#0a2148 ;
+        }
+        #content4 { 
+            grid-area: content4; 
+            border-right: none;
+            background-color:#0a2148 ;
+        }
+        #para1 { 
+            grid-area: para1;
+            border-left: none;
+            font-size:large;
+        }
+        #para2 { 
+            grid-area: para2; 
+            border-left: none;
+            font-size:large;
+        }
+        #para3 { 
+            grid-area: para3; 
+            border-left: none;
+            background-color:#0a2148 ;
+            font-size:large;
+        }
+        #para4 { 
+            grid-area: para4; 
+            border-left: none;
+            background-color:#0a2148 ;
+            font-size:large;
+        }
+        .number{
+            font-size: 100px;
+            font-weight:lighter;
+        }  
+        @media only screen and (max-width: 550px) {
+            .grid-container {
+                display: grid;
+                height: 100vh;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                grid-template-areas: 
+                    "heading1 heading1"
+                    "number1 content1"
+                    "number1 para1"
+                    "number2 content2"
+                    "number2 para2"
+                    "number3 content3"
+                    "number3 para3"
+                    "number4 content4"
+                    "number4 para4";
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            </style>
 
 
 
@@ -159,59 +181,57 @@
     <main>
         <div class="container1">
            
-            <div class="why-snip">
+            <div class="why-us">
                 <div class="grid-container">
                     <!-- First Row -->
-                    <div class="box heading">
+                    <div class="heading" id="heading1">
                         <h1>Why Us?</h1>
                     </div>
-                    <div class="box numbers">
-                        <div class="number">01</div>
-                    </div>
-                    <div class="box content">
+                        <div class="number box" id="number1">01</div>
+                    
+                    <div class="box content" id="content1">
                         <h2>Excellence in every cut</h2>
                        
                     </div>
-                    <div class="box extra">
+                    <div class="box extra" id="para1">
                         <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
                     </div>
             
                     <!-- Second Row -->
-                    <div class="box heading"></div>
-                    <div class="box numbers">
-                        <div class="number">02</div>
-                    </div>
-                    <div class="box content">
+                    
+                        <div class="number box" id="number2">02</div>
+                    
+                    <div class="box content" id="content2">
                         <h2>A legacy of style and tradition</h2>
                        
                     </div>
-                    <div class="box extra">
+                    <div class="box extra" id="para2">
                         <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
                     </div>
             
                     <!-- Third Row -->
-                    <div class="box heading"></div>
-                    <div class="box numbers">
-                        <div class="number">03</div>
-                    </div>
-                    <div class="box content">
+                   
+                    
+                        <div class="number box" id="number3">03</div>
+                   
+                    <div class="box content" id="content3">
                         <h2>Mastering the art of barbering</h2>
                         
                     </div>
-                    <div class="box extra">
+                    <div class="box extra" id="para3">
                         <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
                     </div>
         
                      <!-- Fourth Row -->
-                    <div class="box heading"></div>
-                    <div class="box numbers">
-                        <div class="number">04</div>
-                    </div>
-                    <div class="box content">
+                  
+                   
+                    <div class="number box" id="number4">04</div>
+                    
+                    <div class="box content" id="content4">
                         <h2>Styling with pride</h2>
                         
                     </div>
-                    <div class="box extra">
+                    <div class="box extra" id="para4">
                         <p>
                             Styling with pride
                             This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
@@ -219,7 +239,7 @@
                 </div>
             </div>
             
-
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <div class="container">
             <div class="row product_logo_row">
