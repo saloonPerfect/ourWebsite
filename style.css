@@ -22,16 +22,8 @@
     }
 }
 
-/* Adjust for larger screen sizes */
-@media (min-width: 768px) {
-    .navbar-nav {
-        flex-direction: row; 
-        justify-content: flex-end; 
-    }
-}
 
 
-/* old */
 
 
 .try {

@@ -28,9 +28,7 @@
                 "heading1 number2 content2 para2"
                 "heading1 number3 content3 para3"
                 "heading1 number4 content4 para4";
-            background-color:#0a2148 ;
             color: white;  
-            grid-column: 1 / -1;
             
         
         }
@@ -41,32 +39,23 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             text-align: center; /* Center-align text */
-        
+            background-color:#0a2148;
             
         }
         #heading1 { 
             grid-area: heading1;
-            background-color:#0a2148;
-            font-size: xx-large;
-            font-weight: bold;
+            grid-area: heading1;
+                    background-color:#0a2148;
+                    font-size:100px;
+                    font-weight: bold;
         }
-        /* style why us heading */
-        #heading1 h1 {
-    font-size: 50px;
-    font-weight: bold;
-    }
         #number1 { 
             grid-area: number1;
         
         }
         #number2 { grid-area: number2; }
-        #number3 { grid-area: number3; 
-            background-color:#0a2148 ;
-        }
-        #number4 { 
-            grid-area: number4; 
-            background-color:#0a2148 ;
-        }
+        #number3 { grid-area: number3; }
+        #number4 { grid-area: number4; }
         #content1 { 
             grid-area: content1;
             border-right: none;
@@ -78,39 +67,48 @@
         #content3 { 
             grid-area: content3; 
             border-right: none;
-            background-color:#0a2148 ;
         }
         #content4 { 
             grid-area: content4; 
             border-right: none;
-            background-color:#0a2148 ;
         }
         #para1 { 
             grid-area: para1;
             border-left: none;
-            font-size:large;
         }
         #para2 { 
             grid-area: para2; 
             border-left: none;
-            font-size:large;
         }
         #para3 { 
             grid-area: para3; 
             border-left: none;
-            background-color:#0a2148 ;
-            font-size:large;
         }
         #para4 { 
             grid-area: para4; 
             border-left: none;
-            background-color:#0a2148 ;
-            font-size:large;
         }
         .number{
             font-size: 100px;
-            font-weight:lighter;
-        }  
+            font-weight: lighter;
+        }
+.container .vision{
+    height: 200px; /* Full viewport height */
+    margin: 0;
+    background-color: white;
+    width: 1120px;
+    display: flex;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+    flex-direction: column;
+}
+.container .vision h2{
+    font-size: 100px;
+}
+.container .vision p{
+    font-size: 20px;
+    text-align: center;
+}        
         @media only screen and (max-width: 550px) {
             .grid-container {
                 display: grid;
@@ -120,13 +118,13 @@
                 grid-template-areas: 
                     "heading1 heading1"
                     "number1 content1"
-                    "number1 para1"
+                    "para1 para1"
                     "number2 content2"
-                    "number2 para2"
+                    "para2 para2"
                     "number3 content3"
-                    "number3 para3"
+                    "para3 para3"
                     "number4 content4"
-                    "number4 para4";
+                    "para4 para4";
             }
             
             
@@ -240,50 +238,13 @@
                 </div>
             </div>
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br>
         </div>
         <div class="container">
-            <div class="row product_logo_row">
-                <div class="col-sm-4">
-                    <a class="card hvr-ripple-out product_logo" href="https://www.devacurl.com/" target="_blank">
-		<img src="images/deva.jpg" alt="devaCurl_logo">
-	</a>
-                </div>
-                <div class="col-sm-4">
-
-                    <a class="card hvr-ripple-out product_logo " href="https://www.wella.com/professional/countryselector" target="_blank"> 
-                              <img src="images/logo-wella.jpg" alt="wella_logo">
-                              </a>
-
-                </div>
-                <div class="col-sm-4">
-
-                    <a class="card hvr-ripple-out product_logo " href="https://www.sebastianprofessional.com/en-EN/home" target="_blank"> 
-                              <img src="images/sebastianlogo.jpg" alt="sebastian_logo">
-                              </a>
-
-                </div>
-            </div>
-            <div class="row product_logo_row">
-                <div class="col-sm-4">
-
-                    <a class="card hvr-ripple-out product_logo " href="https://www.goldwell.us/" target="_blank">  
-                              <img src="images/godwell.png" alt="goldwell_logo" >
-                              </a>
-                </div>
-                <div class="col-sm-4">
-
-                    <a class="card hvr-ripple-out product_logo " href="https://www.americancrew.com/" target="_blank"> 
-                               <img src="images/american-crew-logo.jpg" alt="amrCrew_logo">
-                               </a>
-                </div>
-                <div class="col-sm-4">
-
-                    <a class="card hvr-ripple-out product_logo " href="https://www.lomahaircare.com/" target="_blank">
-                                    <img src="images/Loma_Organic_Logo_b761.jpg" alt="loma_logo">
-                                    </a>
-                </div>
-            </div>
+           <div class="vision">
+                <h2>Our vision</h2><br>
+            <p>To make everyone feel beautiful and confident by providing exceptional care, personalized attention, innovative styling, and a luxurious experience</p>
+           </div>
         </div>
     </main>
     <footer>
