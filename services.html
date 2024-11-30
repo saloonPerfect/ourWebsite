@@ -15,6 +15,269 @@
     <!-- --icon -->
     <link rel="icon" href="images/SaloonLogo.png" type="image/x-icon">
     <title>Services | Salon Perfect</title>
+    <style>
+        
+
+        h3,h4 {
+            font-family: 'Kaushan Script', cursive;
+            margin: 20px 0;
+            color: #222;
+        } 
+        /* Service Table */
+        .service-table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .service-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .service-table .column1 {
+            font-weight: bold;
+        }
+
+        .service-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        /* Service Descriptions */
+       
+
+        h3 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2rem;
+            color: #6a11cb;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .container li {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .container li strong {
+            color: #6a11cb;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .container li p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Packages and Offers */
+        
+
+        h3 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2rem;
+            color: #6a11cb;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .container ul li {
+            background-color: papayawhip;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .container ul li strong {
+            color: #6a11cb;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .reviews-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 60px auto;
+            padding: 40px;
+            max-width: 1200px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #6a11cb;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-container {
+                flex-direction: column;
+            }
+
+            .review {
+                margin-bottom: 20px;
+            }
+
+            .service-category ul {
+                display: block;
+                padding: 0;
+            }
+
+            .service-category ul li {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Service Category Styles */
+        .service-category {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .service-category h2 {
+            font-family: 'Kaushan Script', cursive;
+            background: #6a11cb;
+            color: #fff;
+            padding: 20px;
+            font-size: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .service-category ul {
+            list-style: none;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        .service-category ul li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        .service-category ul li:last-child {
+            border-bottom: none;
+        }
+
+        .service-category ul li strong {
+            color: #6a11cb;
+            font-weight: bold;
+        }
+
+        .Service_Descriptions{
+           
+
+            margin-bottom: 40px;
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* image */
+        .service-img-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .service-img-row .col {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .service-img-row .col img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-img-row .col img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .service-img-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        
+
+
+
+    </style>
 </head>
 
 <body>
@@ -50,22 +313,99 @@
         </nav>
     </header>
     <div class="spacer"></div>
+    
     <main>
+    
+        <div class="container">
+            <div class="service-category">
+                <h2>Basic Facials</h2>
+                <ul>
+                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
+                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Specialty Facials</h2>
+                <ul>
+                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
+                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
+                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Advanced Facials</h2>
+                <ul>
+                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
+                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
+                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
+                </ul>
+            </div>
+        </div> 
+   
+    <br>
+    <!-- Service Descriptions -->
+    <section class="Service_Descriptions">
+        <div class="container">
+            <h3>Service Descriptions</h3>
+            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
+            <ul>
+                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
+                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
+                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
+            </ul>
+        </div>
+        <br>
+    </section>
+    
+
+    <!-- Packages and Offers -->
+    <section class="offers">
+        <div class="container">
+            <h3>Packages & Offers</h3>
+            <ul>
+                <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling for $200.</li>
+                <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim for $75.</li>
+            </ul>
+        </div>
+    </section>
+
+        
         <section>
             <div class="container">
                 <div class="row service-img-row">
                     <div class="col">
-                        <img src="images/services.jpg" alt="a_service_image">
+                        <img src="images/saloon (6).jpg" alt="service_image_1" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/saloon (7).jpg" alt="service_image_2" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/saloon (8).jpg" alt="service_image_3" class="img-fluid animated-image">
                     </div>
                 </div>
+                
+                
+                
+                
+                <hr>
                 <div class="row service-headding-row">
                     <div class="col">
-                        <h3>Services Pricing</h3>
+                        <h3> Services Pricing</h3>
                     </div>
                 </div>
                 <div class="row service-pricing-row">
                     <div class="col">
-                        <table  align="center" class="service-table">
+                        <table  class="service-table">
+                            <tr>
+                                <td class="column1">
+                                    <h4>Services</h4>
+                                </td>
+                                <td class="column2">
+                                    <h4>Price (LKR)</h4>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="column1">
                                     Women's Haircut
@@ -286,8 +626,9 @@
                 </div>
             </div>
 
-        </section>
-    </main>
+        
+        
+        
     <footer>
         <div class="container block">
             <div class="row">
@@ -313,7 +654,9 @@
                     <h5 class="footer-headding">Follow Us</h5>
                     <a class="footer_social hvr-pop" href="https://www.facebook.com/salonPerfectmalabe?mibextid=ZbWKwL"><i class="fab fa-facebook-square"></i></a>
                     <a class="footer_social hvr-pop" href="www.tiktok.com/@salonperfectcut"><i class="fa-brands fa-tiktok"></i></i></a>
-                    <a class="footer_social hvr-pop" href="https://www.instagram.com/salonperfect_?igsh=MWpzd2l6bmI1dXM5MA=="> <i class="fab fa-instagram"></i><br /></a><br /><br />
+                    <a class="footer_social hvr-pop" href="https://www.instagram.com/salonperfect_?igsh=MWpzd2l6bmI1dXM5MA=="> <i class="fab fa-instagram"></i><br /></a>
+                    <a class="footer_social hvr-pop" href="https://wa.me/94773802254" target="_blank"><i class="fab fa-whatsapp"></i></a><br />
+                    <p class="footer-para">&copy; 2024 | Salon Perfect. <br> All Rights Reserved.</p><br /><br />
                     <img class="footer-img" src="images/SaloonLogo.png" alt="footrIcon" height="100px" width="100px">
                     <span id="footer-brand">Salon Perfect</span>
                 </div>
@@ -322,13 +665,7 @@
                 <i class="fab fa-whatsapp"></i>  Chat With Us 
             </a>
         </div>
-
-
-
     </footer>
-
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
