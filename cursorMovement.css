@@ -1,0 +1,18 @@
+.ParentCircle {
+    margin: 0;
+    height: 300vh;
+    background-color: #89A8B2;
+    position: relative;
+   
+}
+
+.circle {
+margin-top: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 99, 71, 0.448);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /* So the circle does not interfere with cursor */
+    z-index: 10;
+}
