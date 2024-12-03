@@ -5,255 +5,937 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Snip?</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="cursorMovement.css">
     <style>
- body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0e1a34;
-    color: white;
-}
+        /* General Styling */
+        body {
+            background-color: aquamarine;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-.why-snip {
-    padding: 50px;
-}
+        .grid-container {
+            display: grid;
+    height: auto; /* Ensure the height adjusts dynamically */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto); /* Ensure rows adjust consistently */
+    grid-template-areas: 
+        "heading1 number1 content1 para1"
+        "heading1 number2 content2 para2"
+        "heading1 number3 content3 para3"
+        "heading1 number4 content4 para4";
+    color: white;  
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+        }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr; /* Columns are the same, you can increase their width if needed */
-    gap: 0px; /* Optional: Increase the gap between boxes */
-}
+        .box {
+            border: 2px solid white;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #0a2148;
+        }
 
-.box {
-    padding: 20px;  /* Increase padding for larger boxes */
-    border: 3px solid rgba(255, 255, 255, 0.2); /* Default box border */
-    min-height: 150px;  /* Set a minimum height for the boxes */
-}
-/* Remove border for the first column */
-.grid-container > .heading {
-    border: none;
-}
-
-.heading {
-    text-align: left;
-}
-
-.heading h1 {
-    font-size: 37px;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.numbers {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    text-align: center;
-}
-
-.numbers .number {
-    font-size: 28px;
+        #heading1 { 
+            grid-area: heading1;
+    background-color: #0a2148;
+    font-size: 40px;
     font-weight: bold;
-    color: #d4d4d4;
-}
-
-.content h2 {
-    font-size: 22px;
-    margin: 10px 0;
-    font-weight: normal;
-}
-
-.content p {
-    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 100%; /* Ensures it spans the full height of its grid area */
+    width: 100%;
     margin: 0;
-    line-height: 1.6;
-    color: #c4c4c4;
+    padding: 0;
+        }
+
+        #number1 { grid-area: number1; }
+        #number2 { grid-area: number2; }
+        #number3 { grid-area: number3; }
+        #number4 { grid-area: number4; }
+        
+        #content1 { grid-area: content1; border-right: none; }
+        #content2 { grid-area: content2; border-right: none; }
+        #content3 { grid-area: content3; border-right: none; }
+        #content4 { grid-area: content4; border-right: none; }
+
+        #para1 { grid-area: para1; border-left: none; }
+        #para2 { grid-area: para2; border-left: none; }
+        #para3 { grid-area: para3; border-left: none; }
+        #para4 { grid-area: para4; border-left: none; }
+
+        .number {
+            font-size: 100px;
+            font-weight: lighter;
+        }
+
+        .container .vision {
+            height: auto; /* Allow height to adjust dynamically */
+            margin: 50px auto; /* Add spacing above and below */
+            background-color: white;
+            width: 90%; /* Ensure it fits within the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visuals */
+            z-index: 0; /* Prevent overlapping */
+            position: relative;
+        }
+
+        .container .vision h2 {
+            font-size: 50px;
+            color: #0a2148;
+        }
+
+        .container .vision p {
+            font-size: 20px;
+            text-align: center;
+            color: #0a2148;
+        }
+
+        /* Responsive Design for Small Screens */
+        @media only screen and (max-width: 550px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                grid-template-areas: 
+                    "heading1 heading1"
+                    "number1 content1"
+                    "para1 para1"
+                    "number2 content2"
+                    "para2 para2"
+                    "number3 content3"
+                    "para3 para3"
+                    "number4 content4"
+                    "para4 para4";
+            }
+
+            .container .vision {
+                margin-top: 30px; /* Add spacing below the grid */
+                width: 95%;
+            }
+
+            .container .vision h2 {
+                font-size: 40px;
+            }
+
+            .container .vision p {
+                font-size: 16px;
+            }
+        }
+/* image gallery css */
+
+
+.desktop_2 * {
+  font-family: Nunito, sans-serif;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 
-/* Style for the fourth column */
-.extra {
-    color: #c4c4c4;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column; /* Keep text flow in a column */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align content to the left */
-    text-align: left; /* Align text inside to the left */
-    padding: 10px; /* Optional padding for spacing */
+.desktop_2 button {
+  cursor: pointer;
 }
 
-/* Remove horizontal border between the 3rd and 4th columns */
-.grid-container > .content {
-    border-right: none; /* Remove right border for 3rd column */
+.desktop_2 img {
+  cursor: pointer;
 }
 
-.grid-container > .extra {
-    border-left: none; /* Remove left border for 4th column */
+.desktop_2 img:hover {
+  transform: scale(1.02);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: all;
 }
 
-.content {
-    display: flex;
-    flex-direction: column; /* Keep text flow in a column */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align content to the left */
-    text-align: left; /* Align text inside to the left */
-    padding: 10px; /* Optional padding for spacing */
+.desktop_2 .hdImg {
+  display: none;
 }
 
-.grid-container h2{
-    font-size: 30px;
+.desktop_2 .btn-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.desktop_2 .project:hover .btn-box {
+  display: block;
+}
+
+.desktop_2 .Container {
+  width: 890px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+}
+
+.desktop_2 .portfolio {
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.desktop_2 .project {
+  position: relative;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+}
+
+.desktop_2 .overlay {
+  position: fixed;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(71, 69, 69, 0.7);
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: none;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.desktop_2 .overlay-inner {
+  top: 50%;
+  right: 0px;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: white;
+  max-width: 700px;
+  width: fit-content;
+  padding-top: 35px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  opacity: 1;
+  max-width: 50%;
+  max-height: 85%;
+}
+
+.desktop_2 .close {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  background-image: none;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  outline-color: initial;
+  outline-style: initial;
+  outline-width: 0px;
+  color: #474545;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: initial;
+  border-right-style: initial;
+  border-bottom-style: initial;
+  border-left-style: initial;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.desktop_2 .overlay-inner .hdImgs {
+  width: fit-content;
+  height: calc(80% - 55px);
+  display: flex;
+}
+
+.desktop_2 .overlay-inner img {
+  max-height: 100%;
+  max-width: 100%;
+  transform: none;
+}
+
+.desktop_2 .bigImg {
+  width: 665px;
+  height: 440px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.desktop_2 .project-image {
+  height: 215px;
+  width: 215px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.desktop_2 .above {
+  display: flex;
+}
+
+.desktop_2 .bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1024px) {
+  .desktop_2 .project-image {
+    width: 165px;
+    height: 165px;
+  }
+
+  .desktop_2 .Container {
+    width: 690px;
+    margin-top: 80px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+  }
+
+  .desktop_2 .bigImg {
+    width: 515px;
+    height: 340px;
+  }
 }
 
 @media (max-width: 768px) {
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr; /* Two columns: one for numbers and one for text */
-        gap: 10px;
-        padding: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the entire grid */
-    }
+  .desktop_2 .project {
+    width: 220px;
+    display: inline-block;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
 
-    .heading {
-        grid-column: 1 / -1; /* Make heading span across the entire row */
-        text-align: left;
-        font-size: 24px;
-        font-weight: bold;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Border below heading */
-    }
+  .desktop_2 .project-first {
+    width: 450px;
+  }
 
-    .numbers {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 30px;
-        border-right: 1px solid rgba(255, 255, 255, 0.2); /* Border on the right of numbers */
-        padding-right: 10px;
-    }
+  .desktop_2 .above {
+    flex-direction: column;
+  }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: left;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        border-left: 1px solid rgba(255, 255, 255, 0.2); /* Border on the left of content */
-    }
+  .desktop_2 .portfolio {
+    justify-content: flex-start;
+  }
 
-    .content h2 {
-        font-size: 20px;
-        margin: 10px 0;
-        font-weight: normal;
-    }
+  .desktop_2 .Container {
+    width: 450px;
+  }
 
-    .content p {
-        margin-top: 5px;
-        font-size: 16px;
-        color: #c4c4c4;
-        line-height: 1.5;
-    }
+  .desktop_2 .bigImg {
+    width: 450px;
+  }
 
-    .box {
-        border: 1px solid rgba(255, 255, 255, 0.2); /* Border for each box */
-        padding: 15px;
-        min-height: auto;
-        width: 100%;
-    }
+  .desktop_2 .project-image {
+    width: 220px;
+    height: 200px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    display: inline-block;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
 
-    /* Ensuring content in each row is stacked */
-    .row {
-        display: grid;
-        grid-template-columns: 1fr 3fr; /* Two columns */
-        gap: 10px;
-    }
+  .desktop_2 .side {
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+  }
 
-    .row .numbers {
-        font-size: 30px;
-        text-align: center;
-    }
+  .desktop_2 .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 
-    .row .content h2 {
-        font-size: 20px;
-    }
+  .desktop_2 .project-image.last {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
 
-    .row .content p {
-        font-size: 16px;
-    }
+  .desktop_2 .project-image.last {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .desktop_2 .bigImg {
+    width: 250px;
+    height: 200px;
+  }
+
+  .desktop_2 .project {
+    width: 110px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .desktop_2 .Container {
+    width: 250px;
+    margin-top: 80px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+  }
+
+  .desktop_2 .project-image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .desktop_2 .side {
+    flex-direction: row;
+    width: 250px;
+  }
+
+  .desktop_2 .project-image.last {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+  .desktop_2 .project.last-project {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+  }
+
+  .desktop_2 .project-first {
+    width: 250px;
+  }
+
+  .desktop_2 .overlay-inner {
+    max-width: 90%;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
+.wk-desk-1 {
+  width: 8.333333%;
+}
 
+.wk-desk-2 {
+  width: 16.666667%;
+}
 
+.wk-desk-3 {
+  width: 25%;
+}
 
+.wk-desk-4 {
+  width: 33.333333%;
+}
 
+.wk-desk-5 {
+  width: 41.666667%;
+}
 
+.wk-desk-6 {
+  width: 50%;
+}
 
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
 
 
     </style>
 </head>
 <body>
-    <div class="why-snip">
-        <div class="grid-container">
-            <!-- First Row -->
-            <div class="box heading">
-                <h1>Why Us?</h1>
-            </div>
-            <div class="box numbers">
-                <div class="number">01</div>
-            </div>
-            <div class="box content">
-                <h2>Excellence in every cut</h2>
-               
-            </div>
-            <div class="box extra">
-                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-            </div>
-    
-            <!-- Second Row -->
-            <div class="box heading"></div>
-            <div class="box numbers">
-                <div class="number">02</div>
-            </div>
-            <div class="box content">
-                <h2>A legacy of style and tradition</h2>
-               
-            </div>
-            <div class="box extra">
-                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-            </div>
-    
-            <!-- Third Row -->
-            <div class="box heading"></div>
-            <div class="box numbers">
-                <div class="number">03</div>
-            </div>
-            <div class="box content">
-                <h2>Mastering the art of barbering</h2>
-                
-            </div>
-            <div class="box extra">
-                <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-            </div>
+    <div class="ParentCircle">
+    <div class="circle"></div>
+    <!-- Grid Section -->
+    <div class="grid-container">
+        <!-- First Row -->
+        <div class="heading box" id="heading1" data-aos="fade-right">
+            <h1>Why Us?</h1>
+        </div>
+        <div class="number box" id="number1">01</div>
+        <div class="box content" id="content1">
+            <h2>Excellence in every cut</h2>
+        </div>
+        <div class="box extra" id="para1">
+            <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+        </div>
 
-             <!-- Fourth Row -->
-            <div class="box heading"></div>
-            <div class="box numbers">
-                <div class="number">04</div>
-            </div>
-            <div class="box content">
-                <h2>Styling with pride</h2>
-                
-            </div>
-            <div class="box extra">
-                <p>
-                    Styling with pride
-                    This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-            </div>
+        <!-- Second Row -->
+        <div class="number box" id="number2">02</div>
+        <div class="box content" id="content2">
+            <h2>A legacy of style and tradition</h2>
+        </div>
+        <div class="box extra" id="para2">
+            <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+        </div>
+
+        <!-- Third Row -->
+        <div class="number box" id="number3">03</div>
+        <div class="box content" id="content3">
+            <h2>Mastering the art of barbering</h2>
+        </div>
+        <div class="box extra" id="para3">
+            <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
+        </div>
+
+        <!-- Fourth Row -->
+        <div class="number box" id="number4">04</div>
+        <div class="box content" id="content4">
+            <h2>Styling with pride</h2>
+        </div>
+        <div class="box extra" id="para4">
+            <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
         </div>
     </div>
-    
+
+    <!-- Vision Section -->
+    <!-- <div class="container">
+        <div class="vision" data-aos="fade-right">
+            <h2 >Our vision</h2>
+            <p>To make everyone feel beautiful and confident by providing exceptional care, personalized attention, innovative styling, and a luxurious experience.</p>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <h1 class="vision" style="width:100%">Our gallery</h1>
+
+    </div>
+
+    <!-- image gallery html -->
+    <div class="desktop_2" unique-script-id="w-w-dm-id">
+        <div class="Container">
+          <div class="portfolio">
+            <div class="above">
+              <div class="project project-first">
+                <img alt="" class="bigImg image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d11.png">
+                <div class="overlay">
+                  <div class="overlay-inner">
+                    <button class="close">
+                      Close X
+                    </button>
+                    <div class="hdImgs">
+                      <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d11.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <button class="btn">
+                    View
+                  </button>
+                </div>
+              </div>
+              <div class="side">
+                <div class="project">
+                  <img alt="" class="project-image" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d22.png">
+                  <div class="overlay">
+                    <div class="overlay-inner">
+                      <button class="close">
+                        Close X
+                      </button>
+                      <div class="hdImgs">
+                        <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d22.png">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-box">
+                    <button class="btn">
+                      View
+                    </button>
+                  </div>
+                </div>
+                <div class="project">
+                  <img alt="" class="project-image" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d14.png">
+                  <div class="hdImg">
+                    <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d14.png">
+                  </div>
+                  <div class="btn-box">
+                    <button class="btn">
+                      View
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="project">
+                <img alt="" class="project-image" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d25.png">
+                <div class="overlay">
+                  <div class="overlay-inner">
+                    <button class="close">
+                      Close X
+                    </button>
+                    <div class="hdImgs">
+                      <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d25.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <button class="btn">
+                    View
+                  </button>
+                </div>
+              </div>
+              <div class="project">
+                <img alt="" class="project-image" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d26.png">
+                <div class="overlay">
+                  <div class="overlay-inner">
+                    <button class="close">
+                      Close X
+                    </button>
+                    <div class="hdImgs">
+                      <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d26.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  
+                </div>
+              </div>
+              <div class="project">
+                <img alt="" class="project-image" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d27.png">
+                <div class="overlay">
+                  <div class="overlay-inner">
+                    <button class="close">
+                      Close X
+                    </button>
+                    <div class="hdImgs">
+                      <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d27.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <button class="btn">
+                    View
+                  </button>
+                </div>
+              </div>
+              <div class="project">
+                <img alt="" class="project-image last" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d23.png">
+                <div class="overlay">
+                  <div class="overlay-inner">
+                    <button class="close">
+                      Close X
+                    </button>
+                    <div class="hdImgs">
+                      <img alt="" class="againImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d23.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <button class="btn">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- follow cursor animation javscript -->
+    <script>
+        const circle = document.querySelector('.circle');
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2;
+        let currentX = targetX;
+        let currentY = targetY;
+        const ease = 0.1; // Smoothness factor (lower is smoother)
+
+        // Update target position based on cursor movement
+        window.addEventListener('mousemove', (e) => {
+            targetX = e.clientX + window.pageXOffset; // Account for scrolling
+            targetY = e.clientY + window.pageYOffset; // Account for scrolling
+        });
+
+        // Animation loop
+        function animate() {
+            // Apply easing to move the circle smoothly
+            currentX += (targetX - currentX) * ease;
+            currentY += (targetY - currentY) * ease;
+
+            // Move the circle to the new position
+            circle.style.left = `${currentX - 15}px`; // Adjust for circle center
+            circle.style.top = `${currentY - 15}px`; // Adjust for circle center
+
+            // Keep animating for smooth movement
+            requestAnimationFrame(animate);
+        }
+
+        // Start the animation
+        animate();
+    </script>
+    <!-- page animation javascript files -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
