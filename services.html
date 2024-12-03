@@ -21,7 +21,8 @@
         h3,h4 {
             font-family: 'Kaushan Script', cursive;
             margin: 20px 0;
-            color: #222;
+            color: #222222;
+  
         } 
         /* Service Table */
         .service-table {
@@ -47,7 +48,7 @@
         h3 {
             font-family: 'Kaushan Script', cursive;
             font-size: 2rem;
-            color: #6a11cb;
+            color: #454545;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -76,7 +77,7 @@
         }
 
         .container li strong {
-            color: #6a11cb;
+            color: #454545;
             font-size: 1.2rem;
             display: block;
             margin-bottom: 10px;
@@ -93,9 +94,12 @@
         h3 {
             font-family: 'Kaushan Script', cursive;
             font-size: 2rem;
-            color: #6a11cb;
+            color: #503c3c;
             text-align: center;
             margin-bottom: 20px;
+        }
+        h5{
+            text-decoration: solid;
         }
 
         .container ul {
@@ -108,7 +112,7 @@
         }
 
         .container ul li {
-            background-color: papayawhip;
+            background-color: #c0c0c0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,7 +127,7 @@
         }
 
         .container ul li strong {
-            color: #6a11cb;
+            color: #454545;
             font-size: 1.2rem;
             display: block;
             margin-bottom: 10px;
@@ -159,7 +163,7 @@
 
         blockquote {
             font-style: italic;
-            color: #6a11cb;
+            color: #454545;
             font-size: 1.3rem;
             margin-bottom: 15px;
         }
@@ -200,7 +204,7 @@
 
         .service-category h2 {
             font-family: 'Kaushan Script', cursive;
-            background: #6a11cb;
+            background: rgb(67, 53, 53);
             color: #fff;
             padding: 20px;
             font-size: 2rem;
@@ -226,7 +230,7 @@
         }
 
         .service-category ul li strong {
-            color: #6a11cb;
+            color: #454545;
             font-weight: bold;
         }
 
@@ -239,6 +243,28 @@
             overflow: hidden;
         }
 
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .Service_Descriptions ul {
+                flex-direction: column; /* Stack cards vertically */
+                gap: 15px;
+                align-items: center;
+            }
+
+            .Service_Descriptions li {
+                width: 100%; /* Full width for mobile */
+            }
+
+            .Service_Descriptions h3 {
+                font-size: 1.2rem;
+            }
+
+            .Service_Descriptions p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Image Gallery */
         /* image */
         .service-img-row {
             display: flex;
@@ -266,15 +292,46 @@
             transform: scale(1.05);
         }
 
+
+        /* Mobile View Adjustments */
         @media (max-width: 768px) {
             .service-img-row {
                 flex-direction: column;
                 align-items: center;
+                gap: 20px;  /* Adds extra gap between images on mobile */
             }
+
+            .service-img-row .col {
+                width: 100%; /* Ensure images take full width of the container */
+            }
+
+            .service-img-row .col img {
+                margin-bottom: 10px; /* Adds gap between images */
+            }
+
+            .service-img-row .col:last-child img {
+                margin-bottom: 0; /
+            }
+            
+        }
+        /* slider */
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
         }
 
-        
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
 
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+            }
+        }
 
 
     </style>
@@ -289,7 +346,6 @@
                 <img src="images/SaloonLogo.png" alt="navIcon" class="img-fluid" style="width: 150px; height: auto;">
                 <span class="ms-3 fs-4 fw-bold">Salon Perfect</span>
               </a>
-              
               
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="fa fa-bars"></span>
@@ -312,7 +368,8 @@
             </div>
         </nav>
     </header>
-    <div class="spacer"></div>
+    <!-- <div class="spacer"></div> -->
+     <br><br><br><br><br><br>
     
     <main>
     
@@ -373,7 +430,90 @@
 
         
         <section>
+            <div class="container1 block slider">
+              <div class="slides">
+                <img src="images/saloonCover.jpg" alt="SaloonImg1" width="100%">
+                <img src="images/salo.png" alt="SaloonImg2" width="100%">
+                <img src="images/salo2.png" alt="SaloonImg3" width="100%">
+              </div>
+            </div>
+          </section>
+
+          <script>
+            const slides = document.querySelector('.slides');
+            const images = slides.querySelectorAll('img');
+            let index = 0;
+        
+            function showNextSlide() {
+              index = (index + 1) % images.length;
+              slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+        
+            setInterval(showNextSlide, 4000); // Slide every 4 seconds
+          </script>
+          
+        
+    <br>
+        <div class="container">
+            <div class="service-category">
+                <h2>Basic Facials</h2>
+                <ul>
+                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
+                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Specialty Facials</h2>
+                <ul>
+                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
+                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
+                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Advanced Facials</h2>
+                <ul>
+                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
+                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
+                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
+                </ul>
+            </div>
+        </div> 
+   
+    <br>
+    <!-- Service Descriptions -->
+    <section class="Service_Descriptions">
+        <div class="container">
+            <h3>Service Descriptions</h3>
+            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
+            <ul>
+                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
+                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
+                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
+            </ul>
+        </div>
+        <br>
+    </section>
+    
+
+    <!-- Packages and Offers -->
+    
+        <section class="offers">
             <div class="container">
+                <h3>Packages & Offers</h3>
+                <ul>
+                    <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling. <br><br> <em>Perfect for a fresh look. Terms and conditions apply.</em></li>
+                    <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim. <br> <br> <em>Includes a relaxing head massage. Available for limited time only.</em></li>
+                </ul>
+            </div>
+        </section>
+       
+        
+        <section>
+            <div class="container">
+                <hr>
                 <div class="row service-img-row">
                     <div class="col">
                         <img src="images/saloon (6).jpg" alt="service_image_1" class="img-fluid animated-image">
@@ -383,6 +523,25 @@
                     </div>
                     <div class="col">
                         <img src="images/saloon (8).jpg" alt="service_image_3" class="img-fluid animated-image">
+
+                    </div>
+                    <div class="col">
+                        <img src="images/8.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/9.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/10.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/11.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/12.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/13.png" alt="service_image_3" class="img-fluid animated-image">
                     </div>
                 </div>
                 
@@ -408,219 +567,150 @@
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Women's Haircut
+                                    <h5>1. Haircuts and Styling :</h5> 
+                                     
                                 </td>
+                                <br>
                                 <td class="column2">
-                                    $75-85
+                                    
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Women's Haircut w/ Single Process Color
+                                     - Women's Haircut 
                                 </td>
                                 <td class="column2">
-                                    $155-165
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Women's Haircut w/ Single Process Color & Highlights
+                                     - Men's Haircut
                                 </td>
                                 <td class="column2">
-                                    $210-225
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Women's Haircut w/ Partial Foil Highlights
+                                    - Children's Haircut
+                                    
                                 </td>
                                 <td class="column2">
-                                    $175-190
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>   
                                 <td class="column1">
-                                    Women's Haircut w/ Full Foil Highlights
+                                    - Shampoo & Blowout
+                                    
                                 </td>
                                 <td class="column2">
-                                    $200-215
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Women's Haircut w/ Balayage Highlights
+                                    
                                 </td>
                                 <td class="column2">
-                                    $235
+                                    
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    <h5>2. Hair Treatments :</h5>
+                                </td>
+                                <td class="column2">
+                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td class="column1">
+                                    - Deep Conditioning treatments
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
+                                    - Scalp Treatment
                                 </td>
                                 <td class="column2">
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Men's Haircut
+                                    - Hair Repair And Reconstruction
                                 </td>
                                 <td class="column2">
-                                    $50-55
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Men's Haircut w/ Single Process Color
+                                    - Keratin Smoothing Treatment
                                 </td>
                                 <td class="column2">
-                                    $125-130
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                </td>
-                                <td class="column2">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut
-                                </td>
-                                <td class="column2">
-                                    $85-95
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Style Session
-                                </td>
-                                <td class="column2">
-                                    $50
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut w/ Pintura Highlights
-                                </td>
-                                <td class="column2">
-                                    $235
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut w/ Single Process Color
-                                </td>
-                                <td class="column2">
-                                    $165-175
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut w/ Single Process Color & Highlights
-                                </td>
-                                <td class="column2">
-                                    $220-235
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut w/ Partial Foil Haircut
-                                </td>
-                                <td class="column2">
-                                    $185-200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Haircut w/ Full Foil Haircut
-                                </td>
-                                <td class="column2">
-                                    $210-225
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Deva Curl Pintura Highlights
-                                </td>
-                                <td class="column2">
-                                    $170
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
                                 </td>
+                                <td class="column2">  
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    <h5>3. Colouring & Highlights :</h5>
+                                </td>
                                 <td class="column2">
+                                    
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Single Process Color
+                                    - Full-Colour Application
                                 </td>
                                 <td class="column2">
-                                    $120
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Single Process Color & Highlights
+                                    - Root Touch-up
                                 </td>
                                 <td class="column2">
-                                    $175-180
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Partial Foil Highlights
+                                    - Partial Highlights / Lowlights
                                 </td>
                                 <td class="column2">
-                                    $140-145
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Full Foil Highlights
-                                </td>
-                                <td class="column2">
-                                    $165-170
+                                    Contact us for pricing
                                 </td>
                             </tr>
                             <tr>
                                 <td class="column1">
-                                    Balayage Highlights
+                                    - Full Highlights / Lowlights
                                 </td>
                                 <td class="column2">
-                                    $190
+                                    Contact us for pricing
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="column1">
-                                    Blow-Dry
-                                </td>
-                                <td class="column2">
-                                    $50
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Brazilian Blowout
-                                </td>
-                                <td class="column2">
-                                    $260
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="column1">
-                                    Corrective Color
-                                </td>
-                                <td class="column2">
-                                    Consultation required
-                                </td>
-                            </tr>
-
+                            
                         </table>
-                        <p class="p1">Services include appropriate finish services (i.e. blow-dry, Deva set)</p>
-                        <p class="p2">*Prices are subject to change without notice and can vary depending on length and thickness of hair.</p>
+                        <p class="p1">Our services include professional finishing touches such as blow-dry and styling to suit your preferences.</p>
+                        <p class="p2">* Please note that prices may vary based on hair length, thickness, and specific requirements.</p>
+                        <br><br><hr>
+
                     </div>
 
                 </div>
@@ -662,7 +752,7 @@
                 </div>
             </div>
             <a href="https://wa.me/94773802254" target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i>  Chat With Us 
+                <i class="fab fa-whatsapp"></i>  Book Now 
             </a>
         </div>
     </footer>
