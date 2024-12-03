@@ -7,9 +7,9 @@
 
 .circle {
 margin-top: 5px;
-    width: 35px;
-    height: 35px;
-    background-color: rgba(36, 23, 23, 0.395);
+    width: 45px;
+    height: 45px;
+    background-color: rgba(36, 23, 23, 0.883);
     border-radius: 50%;
     position: absolute;
     pointer-events: none; /* So the circle does not interfere with cursor */
