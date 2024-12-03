@@ -22,16 +22,8 @@
     }
 }
 
-/* Adjust for larger screen sizes */
-@media (min-width: 768px) {
-    .navbar-nav {
-        flex-direction: row; 
-        justify-content: flex-end; 
-    }
-}
 
 
-/* old */
 
 
 .try {
@@ -49,7 +41,7 @@
 .navbar-brand {
     font-family: 'Kaushan Script', cursive;
     font-size: 45px;
-    color: #990099;
+    color: black;
     padding-left: 40px;
     margin-right: 300px;
     text-shadow: 2px 2px 5px rgba(153, 0, 153, 0.6), 0 0 15px rgba(153, 0, 153, 0.4);
@@ -322,7 +314,7 @@ footer {
 #footer-brand {
     font-family: 'Kaushan Script', cursive;
     font-size: 35px;
-    color: #990099;
+    color: black;
 }
 
 .footer-headding {
@@ -337,6 +329,7 @@ footer {
     font-size: 14px;
     line-height: 1.6;
     color: #444;
+
 }
 
 .whatsapp-btn {

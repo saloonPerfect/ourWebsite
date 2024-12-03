@@ -15,93 +15,326 @@
     <!-- --icon -->
     <link rel="icon" href="images/SaloonLogo.png" type="image/x-icon">
     <title>Services | Salon Perfect</title>
-
     <style>
-      /* General styles */
-.service-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-}
+        
 
-.service-table td {
-    padding: 15px;
-    text-align: left;
-    font-size: 16px;
-    color: #333;
-}
+        h3,h4 {
+            font-family: 'Kaushan Script', cursive;
+            margin: 20px 0;
+            color: #222222;
+  
+        } 
+        /* Service Table */
+        .service-table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .service-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .service-table .column1 {
+            font-weight: bold;
+        }
 
-h4 {
-    color: #2c3e50;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
+        .service-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        /* Service Descriptions */
+       
 
-/* Styling the list items */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
+        h3 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2rem;
+            color: #454545;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-li {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-}
+        .container ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+        }
 
-li:hover {
-    color: #3498db; /* Blue color on hover */
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
+        .container li {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Adding hover effect on table row */
-.service-table td:hover {
-    background-color: #F5F5F5; /* Light grey background on hover */
-    transition: background-color 0.3s ease-in-out;
-}
+        .container li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
-/* Adding effects to the paragraph */
-.p1, .p2 {
-    font-size: 1.1em;
-    color: #555;
-    margin-top: 10px;
-}
+        .container li strong {
+            color: #454545;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-/* Adding hover effect to section */
-section:hover {
-    background-color: #F5F5F5; /* Light background color when hovering over the section */
-    transition: background-color 0.3s ease-in-out;
-}
+        .container li p {
+            color: #555;
+            font-size: 0.9rem;
+        }
 
-/* Styling for the container div */
-.col {
-    background-color: #F5F5F5;
-    border-radius: 8px;  /* Slightly rounded corners */
-    box-shadow: 0 4px 8px rgba(165, 16, 16, 0.1); /* Light shadow effect */
-    padding: 20px;
-    margin-top: 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
-}
+        /* Packages and Offers */
+        
 
-.col:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: scale(1.02); /* Slight scaling effect on hover */
-}
+        h3 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2rem;
+            color: #503c3c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h5{
+            text-decoration: solid;
+        }
 
-/* Adding transition to paragraphs */
-.p1, .p2 {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
+        .container ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
 
-.col:hover .p1, .col:hover .p2 {
-    opacity: 1;
-}
+        .container ul li {
+            background-color: #c0c0c0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-</style>
+        .container ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
+        .container ul li strong {
+            color: #454545;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .reviews-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 60px auto;
+            padding: 40px;
+            max-width: 1200px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #454545;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-container {
+                flex-direction: column;
+            }
+
+            .review {
+                margin-bottom: 20px;
+            }
+
+            .service-category ul {
+                display: block;
+                padding: 0;
+            }
+
+            .service-category ul li {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Service Category Styles */
+        .service-category {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .service-category h2 {
+            font-family: 'Kaushan Script', cursive;
+            background: rgb(67, 53, 53);
+            color: #fff;
+            padding: 20px;
+            font-size: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .service-category ul {
+            list-style: none;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        .service-category ul li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        .service-category ul li:last-child {
+            border-bottom: none;
+        }
+
+        .service-category ul li strong {
+            color: #454545;
+            font-weight: bold;
+        }
+
+        .Service_Descriptions{
+           
+
+            margin-bottom: 40px;
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .Service_Descriptions ul {
+                flex-direction: column; /* Stack cards vertically */
+                gap: 15px;
+                align-items: center;
+            }
+
+            .Service_Descriptions li {
+                width: 100%; /* Full width for mobile */
+            }
+
+            .Service_Descriptions h3 {
+                font-size: 1.2rem;
+            }
+
+            .Service_Descriptions p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Image Gallery */
+        /* image */
+        .service-img-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .service-img-row .col {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .service-img-row .col img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-img-row .col img:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .service-img-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;  /* Adds extra gap between images on mobile */
+            }
+
+            .service-img-row .col {
+                width: 100%; /* Ensure images take full width of the container */
+            }
+
+            .service-img-row .col img {
+                margin-bottom: 10px; /* Adds gap between images */
+            }
+
+            .service-img-row .col:last-child img {
+                margin-bottom: 0; /
+            }
+            
+        }
+        /* slider */
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+            }
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -113,7 +346,6 @@ section:hover {
                 <img src="images/SaloonLogo.png" alt="navIcon" class="img-fluid" style="width: 150px; height: auto;">
                 <span class="ms-3 fs-4 fw-bold">Salon Perfect</span>
               </a>
-              
               
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="fa fa-bars"></span>
@@ -136,94 +368,357 @@ section:hover {
             </div>
         </nav>
     </header>
-    <div class="spacer"></div>
+    <!-- <div class="spacer"></div> -->
+     <br><br><br><br><br><br>
+    
     <main>
+    
+        <div class="container">
+            <div class="service-category">
+                <h2>Basic Facials</h2>
+                <ul>
+                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
+                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Specialty Facials</h2>
+                <ul>
+                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
+                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
+                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Advanced Facials</h2>
+                <ul>
+                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
+                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
+                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
+                </ul>
+            </div>
+        </div> 
+   
+    <br>
+    <!-- Service Descriptions -->
+    <section class="Service_Descriptions">
+        <div class="container">
+            <h3>Service Descriptions</h3>
+            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
+            <ul>
+                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
+                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
+                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
+            </ul>
+        </div>
+        <br>
+    </section>
+    
+
+    <!-- Packages and Offers -->
+    <section class="offers">
+        <div class="container">
+            <h3>Packages & Offers</h3>
+            <ul>
+                <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling for $200.</li>
+                <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim for $75.</li>
+            </ul>
+        </div>
+    </section>
+
+        
+        <section>
+            <div class="container1 block slider">
+              <div class="slides">
+                <img src="images/saloonCover.jpg" alt="SaloonImg1" width="100%">
+                <img src="images/salo.png" alt="SaloonImg2" width="100%">
+                <img src="images/salo2.png" alt="SaloonImg3" width="100%">
+              </div>
+            </div>
+          </section>
+
+          <script>
+            const slides = document.querySelector('.slides');
+            const images = slides.querySelectorAll('img');
+            let index = 0;
+        
+            function showNextSlide() {
+              index = (index + 1) % images.length;
+              slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+        
+            setInterval(showNextSlide, 4000); // Slide every 4 seconds
+          </script>
+          
+        
+    <br>
+        <div class="container">
+            <div class="service-category">
+                <h2>Basic Facials</h2>
+                <ul>
+                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
+                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Specialty Facials</h2>
+                <ul>
+                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
+                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
+                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
+                </ul>
+            </div>
+    
+            <div class="service-category">
+                <h2>Advanced Facials</h2>
+                <ul>
+                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
+                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
+                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
+                </ul>
+            </div>
+        </div> 
+   
+    <br>
+    <!-- Service Descriptions -->
+    <section class="Service_Descriptions">
+        <div class="container">
+            <h3>Service Descriptions</h3>
+            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
+            <ul>
+                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
+                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
+                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
+            </ul>
+        </div>
+        <br>
+    </section>
+    
+
+    <!-- Packages and Offers -->
+    
+        <section class="offers">
+            <div class="container">
+                <h3>Packages & Offers</h3>
+                <ul>
+                    <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling. <br><br> <em>Perfect for a fresh look. Terms and conditions apply.</em></li>
+                    <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim. <br> <br> <em>Includes a relaxing head massage. Available for limited time only.</em></li>
+                </ul>
+            </div>
+        </section>
+       
+        
         <section>
             <div class="container">
+                <hr>
                 <div class="row service-img-row">
-                    <div class="colz">
-                        <img src="istock-872361244-cropped-1624514729-1626177802.jpg" alt="a_service_image">
-                        
+                    <div class="col">
+                        <img src="images/saloon (6).jpg" alt="service_image_1" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/saloon (7).jpg" alt="service_image_2" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/saloon (8).jpg" alt="service_image_3" class="img-fluid animated-image">
+
+                    </div>
+                    <div class="col">
+                        <img src="images/8.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/9.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/10.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/11.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/12.png" alt="service_image_3" class="img-fluid animated-image">
+                    </div>
+                    <div class="col">
+                        <img src="images/13.png" alt="service_image_3" class="img-fluid animated-image">
                     </div>
                 </div>
+                
+                
+                
+                
+                <hr>
                 <div class="row service-headding-row">
                     <div class="col">
-                        
-                        <h3>Our Services</h3>
+                        <h3> Services Pricing</h3>
                     </div>
                 </div>
                 <div class="row service-pricing-row">
                     <div class="col">
-                        <table  align="center" class="service-table">
+                        <table  class="service-table">
+                            <tr>
+                                <td class="column1">
+                                    <h4>Services</h4>
+                                </td>
+                                <td class="column2">
+                                    <h4>Price (LKR)</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    <h5>1. Haircuts and Styling :</h5> 
+                                     
+                                </td>
+                                <br>
+                                <td class="column2">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                     - Women's Haircut 
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                     - Men's Haircut
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Children's Haircut
+                                    
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>   
+                                <td class="column1">
+                                    - Shampoo & Blowout
+                                    
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="column1">
                                     
-                                    <h4>Hair and Styling</h4> <br>
-                                    <ul>
-                                        <li>Women's Haircut</li>
-                                        <br>
-                                        <li>Men's Haircut</li>
-                                        <br>
-                                        <li>Childern's Haircut</li>
-                                        <br>
-                                        <li>Shampoo and Blowout</li>
-                                        <br>
-                                    </ul>
-
-
-                                    <h4>Hair Treatment</h4> <br>
-                                    <ul>
-                                        <li>Deep Conditioning treatment</li>
-                                        <br>
-                                        <li>Scalp Treatment</li>
-                                        <br>
-                                        <li>Hair Repair and Reconstruction</li>
-                                        <br>
-                                        <li>Keratin Smoothing Treatment</li>
-                                        <br>
-                                    </ul>
-
-
-                                    <h4>Coloring and Highlights</h4> <br>
-                                    <ul>
-                                        <li>Full colour application</li>
-                                        <br>
-                                        <li>Root touch-up</li>
-                                        <br>
-                                        <li>Partial Highlights/Lowlights</li>
-                                        <br>
-                                        <li>Full highlights/Lowlights</li>
-                                        <br>
-                                    </ul>
-
-
-                                    <h4>Facial</h4> <br>
-                                    <ul>
-                                        <li>classic facials</li>
-                                        <br>
-                                        <li>Specialty Facials</li>
-                                        <br>
-                                        <li>Advanced Facials</li>
-                                        <br>
-                                        <li>Luxurious Facials</li>
-                                        <br>
-                                    </ul>
-
-
+                                </td>
+                                <td class="column2">
+                                    
                                 </td>
                                 
                             </tr>
-                           
+                            <tr>
+                                <td class="column1">
+                                    <h5>2. Hair Treatments :</h5>
+                                </td>
+                                <td class="column2">
+                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td class="column1">
+                                    - Deep Conditioning treatments
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Scalp Treatment
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Hair Repair And Reconstruction
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Keratin Smoothing Treatment
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                </td>
+                                <td class="column2">  
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    <h5>3. Colouring & Highlights :</h5>
+                                </td>
+                                <td class="column2">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Full-Colour Application
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Root Touch-up
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Partial Highlights / Lowlights
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">
+                                    - Full Highlights / Lowlights
+                                </td>
+                                <td class="column2">
+                                    Contact us for pricing
+                                </td>
+                            </tr>
+                            
                         </table>
-                        <p class="p1">Services include appropriate finish services (i.e. blow-dry, Deva set)</p>
-                        <p class="p2">*Prices are subject to change without notice and can vary depending on length and thickness of hair.</p>
+                        <p class="p1">Our services include professional finishing touches such as blow-dry and styling to suit your preferences.</p>
+                        <p class="p2">* Please note that prices may vary based on hair length, thickness, and specific requirements.</p>
+                        <br><br><hr>
+
                     </div>
 
                 </div>
             </div>
 
-        </section>
-    </main>
+        
+        
+        
     <footer>
         <div class="container block">
             <div class="row">
@@ -249,22 +744,18 @@ section:hover {
                     <h5 class="footer-headding">Follow Us</h5>
                     <a class="footer_social hvr-pop" href="https://www.facebook.com/salonPerfectmalabe?mibextid=ZbWKwL"><i class="fab fa-facebook-square"></i></a>
                     <a class="footer_social hvr-pop" href="www.tiktok.com/@salonperfectcut"><i class="fa-brands fa-tiktok"></i></i></a>
-                    <a class="footer_social hvr-pop" href="https://www.instagram.com/salonperfect_?igsh=MWpzd2l6bmI1dXM5MA=="> <i class="fab fa-instagram"></i><br /></a><br /><br />
+                    <a class="footer_social hvr-pop" href="https://www.instagram.com/salonperfect_?igsh=MWpzd2l6bmI1dXM5MA=="> <i class="fab fa-instagram"></i><br /></a>
+                    <a class="footer_social hvr-pop" href="https://wa.me/94773802254" target="_blank"><i class="fab fa-whatsapp"></i></a><br />
+                    <p class="footer-para">&copy; 2024 | Salon Perfect. <br> All Rights Reserved.</p><br /><br />
                     <img class="footer-img" src="images/SaloonLogo.png" alt="footrIcon" height="100px" width="100px">
                     <span id="footer-brand">Salon Perfect</span>
                 </div>
             </div>
             <a href="https://wa.me/94773802254" target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i>  Chat With Us 
+                <i class="fab fa-whatsapp"></i>  Book Now 
             </a>
         </div>
-
-
-
     </footer>
-
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
