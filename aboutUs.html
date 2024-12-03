@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cursorMovement.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="hover.css" type="text/css" />
@@ -12,143 +13,179 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!--fade-right fade-left animation -->
     <!-- --icon -->
     <link rel="icon" href="images/SaloonLogo.png" type="image/x-icon">
     <title>aboutUS | Salon Perfect</title>
 
 
     <style>
-        .grid-container {
-            display: grid;
-            height: 100vh;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            grid-template-areas: 
-                "heading1 number1 content1 para1"
-                "heading1 number2 content2 para2"
-                "heading1 number3 content3 para3"
-                "heading1 number4 content4 para4";
-            color: white;  
-            
-        
-        }
-        .box{
-            border: 2px solid white;
-            height: 200px;
-            display: flex; /* Enable Flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            text-align: center; /* Center-align text */
-            background-color:#0a2148;
-            
-        }
-        #heading1 { 
-            grid-area: heading1;
-            grid-area: heading1;
-                    background-color:#0a2148;
-                    font-size:100px;
-                    font-weight: bold;
-        }
-        #number1 { 
-            grid-area: number1;
-        
-        }
-        #number2 { grid-area: number2; }
-        #number3 { grid-area: number3; }
-        #number4 { grid-area: number4; }
-        #content1 { 
-            grid-area: content1;
-            border-right: none;
-        }
-        #content2 { 
-            grid-area: content2; 
-            border-right: none;
-        }
-        #content3 { 
-            grid-area: content3; 
-            border-right: none;
-        }
-        #content4 { 
-            grid-area: content4; 
-            border-right: none;
-        }
-        #para1 { 
-            grid-area: para1;
-            border-left: none;
-        }
-        #para2 { 
-            grid-area: para2; 
-            border-left: none;
-        }
-        #para3 { 
-            grid-area: para3; 
-            border-left: none;
-        }
-        #para4 { 
-            grid-area: para4; 
-            border-left: none;
-        }
-        .number{
-            font-size: 100px;
-            font-weight: lighter;
-        }
-.container .vision{
-    height: 200px; /* Full viewport height */
-    margin: 0;
-    background-color: white;
-    width: 1120px;
-    display: flex;
-    justify-content: center; /* Centers the container horizontally */
-    align-items: center; /* Centers the container vertically */
-    flex-direction: column;
+       
+       .grid-container {
+    display: grid;
+    gap: 1.5rem; /* Reduced gap for smaller screens */
+    grid-template-columns: 1fr; /* Single column for better stacking */
+    grid-template-areas:
+        "heading"
+        "content"
+        "para";
+    background-color: #f5f5f5;
+    color: #503c3c;
+    padding: 1rem; /* Reduced padding for compactness */
+    border-radius: 10px;
 }
-.container .vision h2{
-    font-size: 100px;
-}
-.container .vision p{
-    font-size: 20px;
-    text-align: center;
-}        
-        @media only screen and (max-width: 550px) {
-            .grid-container {
-                display: grid;
-                height: 100vh;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto auto auto auto auto auto;
-                grid-template-areas: 
-                    "heading1 heading1"
-                    "number1 content1"
-                    "para1 para1"
-                    "number2 content2"
-                    "para2 para2"
-                    "number3 content3"
-                    "para3 para3"
-                    "number4 content4"
-                    "para4 para4";
-            }
-            
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            </style>
 
+/* Heading Style */
+.grid-container h1 {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Box Style */
+.box {
+    background: #1b355e;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.box .number,.box p,.box h2{
+    color: white;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background: #444a54;
+}
+
+.box h2 {
+    font-size: 1.2rem; /* Adjusted for smaller screens */
+    margin-bottom: 0.5rem;
+}
+
+.number {
+    font-size: 2rem; /* Scaled down for compactness */
+    font-weight: bold;
+}
+
+.box p {
+    font-size: 0.9rem; /* Reduced font size */
+    margin-top: 0.5rem;
+}
+
+/* Product Logos */
+.product_logo_row img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product_logo_row img:hover {
+    transform: scale(1.1);
+}
+.container .vision {
+            height: auto; /* Allow height to adjust dynamically */
+            margin: 50px auto; /* Add spacing above and below */
+            background-color: white;
+            width: 90%; /* Ensure it fits within the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visuals */
+            z-index: 0; /* Prevent overlapping */
+            position: relative;
+        }
+
+        .container .vision h2 {
+            font-size: 50px;
+            color: #0a2148;
+        }
+
+        .container .vision p {
+            font-size: 20px;
+            text-align: center;
+            color: #0a2148;
+        }
+
+
+   
+        /* Responsive Design for Small Screens */
+        @media only screen and (max-width: 550px) {
+            .grid-container{
+              margin-top: 50px;
+            }
+            .container .vision {
+                margin-top: 30px; /* Add spacing below the grid */
+                width: 95%;
+            }
+
+            .container .vision h2 {
+                font-size: 40px;
+            }
+
+            .container .vision p {
+                font-size: 16px;
+            }
+        }
+
+/* image gallery css stating */
+.gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  padding: 10px;
+  margin-bottom: 20px; /* Ensure space between gallery and footer */
+}
+
+.gallery-item {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+}
+
+.gallery-item img {
+  width: 300px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Media query for smaller devices */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Single column for mobile view */
+    margin-bottom: 40px; /* Extra spacing for mobile view */
+  }
+
+  .gallery-item img {
+    width: 150px; /* Ensure image fits within the container */
+    height: 200px; /* Maintain aspect ratio */
+  }
+}
+
+/* image gallery css ending */
+
+    </style>
 
 
 
 </head>
 
 <body>
+  <div class="ParentCircle"></div>
+    <div class="circle"></div>
+  
     <header>
 
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md" >
            <!-- changed by j -->
            <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="images/SaloonLogo.png" alt="navIcon" class="img-fluid" style="width: 150px; height: auto;">
@@ -181,70 +218,78 @@
         <div class="container1">
            
             <div class="why-us">
-                <div class="grid-container">
-                    <!-- First Row -->
-                    <div class="heading" id="heading1">
-                        <h1>Why Us?</h1>
-                    </div>
-                        <div class="number box" id="number1">01</div>
-                    
-                    <div class="box content" id="content1">
-                        <h2>Excellence in every cut</h2>
-                       
-                    </div>
-                    <div class="box extra" id="para1">
-                        <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-                    </div>
-            
-                    <!-- Second Row -->
-                    
-                        <div class="number box" id="number2">02</div>
-                    
-                    <div class="box content" id="content2">
-                        <h2>A legacy of style and tradition</h2>
-                       
-                    </div>
-                    <div class="box extra" id="para2">
-                        <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-                    </div>
-            
-                    <!-- Third Row -->
-                   
-                    
-                        <div class="number box" id="number3">03</div>
-                   
-                    <div class="box content" id="content3">
-                        <h2>Mastering the art of barbering</h2>
-                        
-                    </div>
-                    <div class="box extra" id="para3">
-                        <p>This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-                    </div>
-        
-                     <!-- Fourth Row -->
-                  
-                   
-                    <div class="number box" id="number4">04</div>
-                    
-                    <div class="box content" id="content4">
-                        <h2>Styling with pride</h2>
-                        
-                    </div>
-                    <div class="box extra" id="para4">
-                        <p>
-                            Styling with pride
-                            This is the space to introduce the business and what it has to offer. Define the qualities and values that make it unique.</p>
-                    </div>
+              <div class="grid-container">
+                <h1 data-aos="fade-right">Why Us?</h1>
+                <div class="box" data-aos="fade-left">
+                    <div class="number">01</div>
+                    <h2>Excellence in Every Cut</h2>
+                    <p>We provide unmatched haircuts that suit your style and personality.</p>
+                </div>
+                <div class="box" data-aos="fade-right">
+                    <div class="number">02</div>
+                    <h2>A Legacy of Style</h2>
+                    <p>Blending tradition with modern trends for the perfect look.</p>
+                </div>
+                <div class="box" data-aos="fade-left">
+                    <div class="number">03</div>
+                    <h2>Art of Barbering</h2>
+                    <p>Our stylists masterfully craft looks that bring out your best.</p>
+                </div>
+                <div class="box" data-aos="fade-right">
+                    <div class="number">04</div>
+                    <h2>Styling with Pride</h2>
+                    <p>Your style, our pride. Elevate your look with us!</p>
                 </div>
             </div>
             
-            <br><br><br><br><br><br><br><br><br>
-        </div>
-        <div class="container">
-           <div class="vision">
-                <h2>Our vision</h2><br>
-            <p>To make everyone feel beautiful and confident by providing exceptional care, personalized attention, innovative styling, and a luxurious experience</p>
-           </div>
+                <!-- Vision Section -->
+                <div class="container">
+                    <h1 class="vision" data-aos="fade-left">Our gallery</h1>
+                    <!-- gallery html -->
+                    <div class="gallery">
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img1.jpg" alt="Photo 1" data-aos="fade-right">
+                      </div>
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img2.jpg" alt="Photo 2" data-aos="fade-left">
+                      </div>
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img3.jpg" alt="Photo 3" data-aos="fade-right">
+                      </div>
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img4.jpg" alt="Photo 4" data-aos="fade-left">
+                      </div>
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img5.jpg" alt="Photo 5" data-aos="fade-right">
+                      </div>
+                      <div class="gallery-item">
+                        <img src="images/aboutUs/img6.jpg" alt="Photo 5" data-aos="fade-left">
+                      </div>
+                    </div>
+                 
+            
+                </div>
+            </div>
+            
+
+            <!-- image gallery starting -->
+
+                     <div class="btn-box">
+                          
+                        </div>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            
         </div>
     </main>
     <footer>
@@ -289,10 +334,46 @@
     </footer>
 
 
+  </div>
+   <!-- follow cursor animation javscript -->
+   <script>
+    const circle = document.querySelector('.circle');
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let currentX = targetX;
+    let currentY = targetY;
+    const ease = 0.1; // Smoothness factor (lower is smoother)
 
+    // Update target position based on cursor movement
+    window.addEventListener('mousemove', (e) => {
+        targetX = e.clientX + window.pageXOffset; // Account for scrolling
+        targetY = e.clientY + window.pageYOffset; // Account for scrolling
+    });
+
+    // Animation loop
+    function animate() {
+        // Apply easing to move the circle smoothly
+        currentX += (targetX - currentX) * ease;
+        currentY += (targetY - currentY) * ease;
+
+        // Move the circle to the new position
+        circle.style.left = `${currentX - 15}px`; // Adjust for circle center
+        circle.style.top = `${currentY - 15}px`; // Adjust for circle center
+
+        // Keep animating for smooth movement
+        requestAnimationFrame(animate);
+    }
+
+    // Start the animation
+    animate();
+</script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 
 </html>
