@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cursorMovement.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!--fade-right fade-left animation -->
     <!-- --icon -->
     <link rel="icon" href="images/SaloonLogo.png" type="image/x-icon">
     <title>Services | Salon Perfect</title>
@@ -22,8 +23,7 @@
         h3,h4 {
             font-family: 'Kaushan Script', cursive;
             margin: 20px 0;
-            color: #222222;
-  
+            color: #222;
         } 
         /* Service Table */
         .service-table {
@@ -98,9 +98,6 @@
             color: #503c3c;
             text-align: center;
             margin-bottom: 20px;
-        }
-        h5{
-            text-decoration: solid;
         }
 
         .container ul {
@@ -244,28 +241,6 @@
             overflow: hidden;
         }
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .Service_Descriptions ul {
-                flex-direction: column; /* Stack cards vertically */
-                gap: 15px;
-                align-items: center;
-            }
-
-            .Service_Descriptions li {
-                width: 100%; /* Full width for mobile */
-            }
-
-            .Service_Descriptions h3 {
-                font-size: 1.2rem;
-            }
-
-            .Service_Descriptions p {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Image Gallery */
         /* image */
         .service-img-row {
             display: flex;
@@ -293,28 +268,13 @@
             transform: scale(1.05);
         }
 
-
-        /* Mobile View Adjustments */
         @media (max-width: 768px) {
             .service-img-row {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;  /* Adds extra gap between images on mobile */
             }
-
-            .service-img-row .col {
-                width: 100%; /* Ensure images take full width of the container */
-            }
-
-            .service-img-row .col img {
-                margin-bottom: 10px; /* Adds gap between images */
-            }
-
-            .service-img-row .col:last-child img {
-                margin-bottom: 0; /
-            }
-            
         }
+
         /* slider */
         .slider {
             width: 100%;
@@ -331,6 +291,8 @@
             width: 100%;
             flex-shrink: 0;
         }
+
+
 
 
     </style>
@@ -373,63 +335,6 @@
      <br><br><br><br><br><br>
     
     <main>
-    
-        <div class="container">
-            <div class="service-category">
-                <h2>Basic Facials</h2>
-                <ul>
-                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
-                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
-                </ul>
-            </div>
-    
-            <div class="service-category">
-                <h2>Specialty Facials</h2>
-                <ul>
-                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
-                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
-                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
-                </ul>
-            </div>
-    
-            <div class="service-category">
-                <h2>Advanced Facials</h2>
-                <ul>
-                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
-                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
-                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
-                </ul>
-            </div>
-        </div> 
-   
-    <br>
-    <!-- Service Descriptions -->
-    <section class="Service_Descriptions">
-        <div class="container">
-            <h3>Service Descriptions</h3>
-            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
-            <ul>
-                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
-                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
-                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
-            </ul>
-        </div>
-        <br>
-    </section>
-    
-
-    <!-- Packages and Offers -->
-    <section class="offers">
-        <div class="container">
-            <h3>Packages & Offers</h3>
-            <ul>
-                <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling for $200.</li>
-                <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim for $75.</li>
-            </ul>
-        </div>
-    </section>
-
-        
         <section>
             <div class="container1 block slider">
               <div class="slides">
@@ -457,28 +362,28 @@
     <br>
         <div class="container">
             <div class="service-category">
-                <h2>Basic Facials</h2>
+                <h2 data-aos="fade-right">Basic Facials</h2>
                 <ul>
-                    <li><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
-                    <li><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
+                    <li data-aos="fade-up"><strong>Classic Facial:</strong> Cleansing, exfoliation, steam, extraction, mask, and moisturizer.</li>
+                    <li data-aos="fade-up"><strong>Deep Cleansing Facial:</strong> Removes impurities and excess oil with a purifying mask.</li>
                 </ul>
             </div>
     
             <div class="service-category">
-                <h2>Specialty Facials</h2>
+                <h2 data-aos="fade-left">Specialty Facials</h2>
                 <ul>
-                    <li><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
-                    <li><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
-                    <li><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
+                    <li data-aos="fade-up"><strong>Hydrating Facial:</strong> Moisturizes and revitalizes dry skin with hydrating serums.</li>
+                    <li data-aos="fade-up"><strong>Anti-Aging Facial:</strong> Targets signs of aging with antioxidants and peptides.</li>
+                    <li data-aos="fade-up"><strong>Brightening Facial:</strong> Reduces pigmentation for a radiant skin tone.</li>
                 </ul>
             </div>
     
             <div class="service-category">
-                <h2>Advanced Facials</h2>
+                <h2 data-aos="fade-right">Advanced Facials</h2>
                 <ul>
-                    <li><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
-                    <li><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
-                    <li><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
+                    <li data-aos="fade-up"><strong>Chemical Peel Facial:</strong> Exfoliates the skin, improving texture and tone.</li>
+                    <li data-aos="fade-up"><strong>Microdermabrasion Facial:</strong> Promotes smoother skin with gentle exfoliation.</li>
+                    <li data-aos="fade-up"><strong>LED Light Therapy Facial:</strong> Treats acne and aging using light therapy.</li>
                 </ul>
             </div>
         </div> 
@@ -487,12 +392,12 @@
     <!-- Service Descriptions -->
     <section class="Service_Descriptions">
         <div class="container">
-            <h3>Service Descriptions</h3>
-            <p style="text-align: center;">Explore our premium services tailored to your needs:</p>
+            <h3 data-aos="fade-left">Service Descriptions</h3>
+            <p style="text-align: center;" data-aos="fade-right">Explore our premium services tailored to your needs:</p>
             <ul>
-                <li><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
-                <li><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
-                <li><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
+                <li data-aos="fade-up"><strong>Women's Haircut:</strong> Precision cuts to complement your style, approx. 30-45 minutes.</li>
+                <li data-aos="fade-up"><strong>Men's Haircut:</strong> Stylish grooming for a professional look, 20-30 minutes.</li>
+                <li data-aos="fade-up"><strong>Balayage Highlights:</strong> Sun-kissed, natural-looking highlights, takes 1-2 hours.</li>
             </ul>
         </div>
         <br>
@@ -503,10 +408,10 @@
     
         <section class="offers">
             <div class="container">
-                <h3>Packages & Offers</h3>
+                <h3 data-aos="fade-left">Packages & Offers</h3>
                 <ul>
-                    <li><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling. <br><br> <em>Perfect for a fresh look. Terms and conditions apply.</em></li>
-                    <li><strong>Men's Grooming Special:</strong> Haircut + Beard Trim. <br> <br> <em>Includes a relaxing head massage. Available for limited time only.</em></li>
+                    <li data-aos="fade-up"><strong>Complete Makeover Package:</strong> Haircut + Highlights + Styling. <br><br> <em>Perfect for a fresh look. Terms and conditions apply.</em></li>
+                    <li data-aos="fade-up"><strong>Men's Grooming Special:</strong> Haircut + Beard Trim. <br> <br> <em>Includes a relaxing head massage. Available for limited time only.</em></li>
                 </ul>
             </div>
         </section>
@@ -517,32 +422,32 @@
                 <hr>
                 <div class="row service-img-row">
                     <div class="col">
-                        <img src="images/saloon (6).jpg" alt="service_image_1" class="img-fluid animated-image">
+                        <img src="images/saloon (6).jpg" alt="service_image_1" class="img-fluid animated-image" data-aos="fade-right">
                     </div>
                     <div class="col">
-                        <img src="images/saloon (7).jpg" alt="service_image_2" class="img-fluid animated-image">
+                        <img src="images/saloon (7).jpg" alt="service_image_2" class="img-fluid animated-image" data-aos="fade-left">
                     </div>
                     <div class="col">
-                        <img src="images/saloon (8).jpg" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/saloon (8).jpg" alt="service_image_3" class="img-fluid animated-image"data-aos="fade-right">
 
                     </div>
                     <div class="col">
-                        <img src="images/8.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/8.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-left">
                     </div>
                     <div class="col">
-                        <img src="images/9.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/9.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-right">
                     </div>
                     <div class="col">
-                        <img src="images/10.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/10.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-left">
                     </div>
                     <div class="col">
-                        <img src="images/11.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/11.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-right">
                     </div>
                     <div class="col">
-                        <img src="images/12.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/12.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-left">
                     </div>
                     <div class="col">
-                        <img src="images/13.png" alt="service_image_3" class="img-fluid animated-image">
+                        <img src="images/13.png" alt="service_image_3" class="img-fluid animated-image" data-aos="fade-right">
                     </div>
                 </div>
                 
@@ -552,12 +457,12 @@
                 <hr>
                 <div class="row service-headding-row">
                     <div class="col">
-                        <h3> Services Pricing</h3>
+                        <h3 data-aos="fade-left"> Services Pricing</h3>
                     </div>
                 </div>
                 <div class="row service-pricing-row">
                     <div class="col">
-                        <table  class="service-table">
+                        <table  class="service-table" data-aos="fade-up">
                             <tr>
                                 <td class="column1">
                                     <h4>Services</h4>
@@ -708,8 +613,8 @@
                             </tr>
                             
                         </table>
-                        <p class="p1">Our services include professional finishing touches such as blow-dry and styling to suit your preferences.</p>
-                        <p class="p2">* Please note that prices may vary based on hair length, thickness, and specific requirements.</p>
+                        <p class="p1" data-aos="fade-right">Our services include professional finishing touches such as blow-dry and styling to suit your preferences.</p>
+                        <p class="p2" data-aos="fade-left">* Please note that prices may vary based on hair length, thickness, and specific requirements.</p>
                         <br><br><hr>
 
                     </div>
